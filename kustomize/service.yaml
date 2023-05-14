@@ -12,10 +12,10 @@ spec:
     - port: 8080
       protocol: TCP
       name: http
-      nodePort: 8080
+      nodePort: 30080
     # Prometheus endpoints wouldn't normally
     # be external, but for demo purposes lets expose it
     - port: 9360
       protocol: TCP
       name: metrics-endpoint
-      nodePort: 9360
+      nodePort: 30090
