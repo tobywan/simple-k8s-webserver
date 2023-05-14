@@ -36,11 +36,11 @@ task
 
 ## Todo
 
-- [ ] Create web server
-- [ ] Add prometheus metrics
-- [ ] Add w3scv logger
-- [ ] Add docker file
-- [ ] Build docker image on push to GH
+- [x] Create web server
+- [x] Add prometheus metrics
+- [x] Add w3scv logger
+- [x] Add docker file
+- [x] Build docker image on push to GH
 - [ ] Set up AWS account
 - [ ] Terraform:
   - [ ] Create ECR repo with Lifecycle policy
