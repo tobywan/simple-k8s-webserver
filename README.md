@@ -10,6 +10,8 @@ The webserver uses the [labstack/echo](https://echo.labstack.com/) framework. Th
 
 - 8080
   - `/` returns `200: Hello, World`
+  - `/livez` returns `200` when ready
+  - `/readyz` returns `200` when ready
   - `/panic` generates a `500` server side error
   - any other routes return `404`
 
