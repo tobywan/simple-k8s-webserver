@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: podinfo
+  name: simple-k8s-webserver
 spec:
   minReadySeconds: 3
   revisionHistoryLimit: 5
@@ -22,7 +22,7 @@ spec:
         app: simple-k8s-webserver
     spec:
       containers:
-      - name: podinfod
+      - name: simple-k8s-webserver
         image: spangen/simple-k8s-webserver:latest
         imagePullPolicy: IfNotPresent
         ports:
