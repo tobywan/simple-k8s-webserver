@@ -11,7 +11,9 @@ spec:
   ports:
     - port: 8080
       protocol: TCP
+      name: http
     # Prometheus endpoints wouldn't normally
     # be external, but for demo purposes lets expose it
     - port: 9360
       protocol: TCP
+      name: metrics-endpoint
