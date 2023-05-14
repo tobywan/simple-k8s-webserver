@@ -46,6 +46,19 @@ task
   - [ ] Create ECR repo with Lifecycle policy
   - [ ] IAM roles
   - [ ] EKS Cluster
-- [ ] GitOps
+- [x] GitOps
+
+
+I did not have an available AWS account to push images to and EKS clusters
+are not available on the free/trial plan.
+
+So I chose to push the images to dockerhub at
+https://hub.docker.com/r/spangen/simple-k8s-webserver/tags
+
+I am running kubernetes locally and installed flux. The gitops repo is at
+https://github.com/tobywan/hello-git-ops
+
+
+
 
 
