@@ -24,7 +24,10 @@ spec:
       containers:
       - name: simple-k8s-webserver
         image: spangen/simple-k8s-webserver:latest
-        imagePullPolicy: IfNotPresent
+          # We would normally just pull if not IfNotPresent
+          # but as we're using latest, let's always pull
+        imagePullPolicy: Always
+          # imagePullPolicy: IfNotPresent
         ports:
         - name: http
           containerPort: 8080
