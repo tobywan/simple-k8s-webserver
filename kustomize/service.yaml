@@ -3,11 +3,15 @@ kind: Service
 metadata:
   name: simple-k8s-webserver
 spec:
-  type: ClusterIP
+  # In production we'd use a better form of ingress
+  # and keep this as a cluster IP to resolve internally
+  type: NodePort
   selector:
     app: simple-k8s-webserver
   ports:
-    - name: http
-      port: 8080
+    - port: 8080
       protocol: TCP
-      targetPort: http
+    # Prometheus endpoints wouldn't normally
+    # be external, but for demo purposes lets expose it
+    - port: 9360
+      protocol: TCP
