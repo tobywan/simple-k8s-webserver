@@ -25,4 +25,27 @@ The webserver uses the [labstack/echo](https://echo.labstack.com/) framework. Th
 Logs are provided by the [echo middleware logging](https://echo.labstack.com/middleware/logger/) component and
 write JSON structured logs to STDOUT.
 
+## Kubernetes
+
+The `.kustomize` directory contains a simple
+
+- Pod autoscaler
+- Deployment
+- Service
+
+Which are intended to launch the app in a single
+node cluster, and expose the ports on that node.
+
+Run `kubectl get service` to inspect which ports have
+been exposed externaly,
+
+e.g.
+
+```
+ kubectl get services
+NAME                   TYPE        CLUSTER-IP    EXTERNAL-IP   PORT(S)                         AGE
+kubernetes             ClusterIP   10.96.0.1     <none>        443/TCP                         7d6h
+simple-k8s-webserver   NodePort    10.99.4.187   <none>        8080:30080/TCP,9360:30090/TCP   67m
+```
+
 
