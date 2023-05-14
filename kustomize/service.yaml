@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: simple-k8s-webserver
+spec:
+  # In production we'd use a better form of ingress
+  # and keep this as a cluster IP to resolve internally
+  type: NodePort
+  selector:
+    app: simple-k8s-webserver
+  ports:
+    - port: 8080
+      protocol: TCP
+      name: http
+    # Prometheus endpoints wouldn't normally
+    # be external, but for demo purposes lets expose it
+    - port: 9360
+      protocol: TCP
+      name: metrics-endpoint

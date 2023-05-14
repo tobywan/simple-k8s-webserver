@@ -32,6 +32,8 @@ func main() {
 
 	// Routes
 	echoMain.GET("/", hello)
+	echoMain.GET("/livez", livez)
+	echoMain.GET("/readyz", readyz)
 	echoMain.GET("/panic", serverError)
 
 	// Spawn a separate goroutine for the metrics endpoint
@@ -40,11 +42,24 @@ func main() {
 	echoMain.Logger.Fatal(echoMain.Start(":8080"))
 }
 
-// Handler
+// Handler for content
 func hello(c echo.Context) error {
 	return c.String(http.StatusOK, "Hello, World!")
 }
 
 func serverError(c echo.Context) error {
 	panic("This is a simulated server error")
+}
+
+// TODO
+// Consider if/when these routes should be logged and metric'ed
+
+// Liveness probe
+func livez(c echo.Context) error {
+	return c.String(http.StatusOK, "Alive!")
+}
+
+// Readiness probe
+func readyz(c echo.Context) error {
+	return c.String(http.StatusOK, "Ready!")
 }
