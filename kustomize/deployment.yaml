@@ -39,7 +39,7 @@ spec:
         - ./simple-k8s-webserver
         livenessProbe:
           httpGet:
-            path: /healthz
+            path: /livez
             port: 8080
           initialDelaySeconds: 5
           timeoutSeconds: 5

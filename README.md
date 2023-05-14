@@ -35,6 +35,7 @@ The `.kustomize` directory contains a simple
 
 Which are intended to launch the app in a single
 node cluster, and expose the ports on that node.
+Port 8080 is exposed as 30090 and 9360 as 30090
 
 Run `kubectl get service` to inspect which ports have
 been exposed externaly,
